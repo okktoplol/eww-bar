@@ -13,3 +13,4 @@ a bar made with eww
 
 ### credits
 - [saimoomedits](https://github.com/saimoomedits) for inspiration and for some scripts
+- Velen#9805 on discord for workpaces script
