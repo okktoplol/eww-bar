@@ -10,6 +10,7 @@ a bar made with eww
 - intall eww
 - put eww in /usr/bin/
 - clone this repository
+- change the eww values to point to local files
 
 ### credits
 - [saimoomedits](https://github.com/saimoomedits) for inspiration and for some scripts
