@@ -8,5 +8,5 @@ a bar made with eww
 
 ### installation
 - intall eww
-- put eww in /usr/bin
+- put eww in /usr/bin/
 - clone this repository
