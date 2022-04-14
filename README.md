@@ -12,4 +12,4 @@ a bar made with eww
 - clone this repository
 
 ### credits
-- @saimoomedits for inspiration and for some scripts
+- [saimoomedits](https://github.com/saimoomedits) for inspiration and for some scripts
