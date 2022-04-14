@@ -10,3 +10,6 @@ a bar made with eww
 - intall eww
 - put eww in /usr/bin/
 - clone this repository
+
+### credits
+- @saimoomedits for inspiration and for some scripts
