@@ -214,7 +214,7 @@
                        "")
                (button :class "launcher-btn"
                        :onclick "steam & disown"
-                       :tooltip "stean"
+                       :tooltip "steam"
                        "")
                (button :class "launcher-btn"
                        :onclick "firefox -P default-release & disown"
