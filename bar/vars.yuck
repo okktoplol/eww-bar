@@ -1,0 +1,5 @@
+; vars
+(defvar hover_vol false)
+(defvar hover_mic false)
+(defvar hover_mus false)
+(defvar eww "eww -c ~/Documents/eww/bar")

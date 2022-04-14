@@ -1,0 +1,34 @@
+#!/bin/bash
+
+get_status ()
+{
+    if [ $(playerctl status) = "Playing" ]; then
+        echo ""
+    elif [ $(playerctl status) = "Paused" ]; then
+        echo ""
+    else
+        echo ""
+    fi
+}
+
+get_song ()
+{
+    if [ -z $(playerctl metadata title) ]; then
+        echo "No song playing"
+    else
+        echo " $(playerctl metadata title) - $(playerctl metadata artist)"
+    fi
+}
+
+
+if [[ "$1" == "--song" ]]; then
+	get_song
+elif [[ "$1" == "--status" ]]; then
+	get_status
+elif [[ "$1" == "--toggle" ]]; then
+	playerctl play-pause
+elif [[ "$1" == "--next" ]]; then
+	{ playerctl next; get_cover; }
+elif [[ "$1" == "--prev" ]]; then
+	{ playerctl previous; get_cover; }
+fi

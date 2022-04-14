@@ -1,0 +1,271 @@
+*
+{
+    all: unset;
+}
+
+/* separator */
+
+.sepbar
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 24px;
+    margin-right: 19px;
+    margin-left: 19px;
+}
+
+/* tooltip */
+tooltip
+{
+    background-color: #161320;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 12px;
+}
+
+/* bar */
+.bar
+{
+    background-color: #161320;
+    border-radius: 15px;
+}
+
+/* time*/
+.time-cpu-mem
+{
+    margin-right: 15px;
+}
+.time-label
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 18px;
+}
+
+/* mem cpu */
+.mem
+{
+    color: #FAE3B0;
+    background-color: #302D41;
+    border-radius: 10px;
+}
+.cpu
+{
+    color: #F5C2E7;
+    background-color: #302D41;
+    border-radius: 10px;
+    margin-right: 30px;
+}
+.cpu-and-mem
+{
+    background-color: #161320;
+    border-radius: 16px;
+    margin-right: 20px;
+}
+
+/* volume and mic */
+
+.vol
+{
+    margin-left: 10px
+}
+.vol-icon
+{
+    font-size: 20px;
+    margin-right: 10px;
+}
+.mic-icon
+{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.micvol
+{
+    margin-left: 10px;
+}
+
+.volbar trough highlight
+{
+    background-color: #F5C2E7;
+    border-radius: 10px;
+}
+.micbar trough highlight
+{
+    background-color: #FAE3B0;
+    border-radius: 10px;
+}
+
+scale trough
+{
+    border-radius: 10px;
+    background-color: #302D41;
+    min-height: 10px;
+    min-width: 100px;
+}
+
+/* power */
+
+.power-icon
+{
+    font-size: 20px;
+}
+
+/* music */
+
+.music-label
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 15px;
+    margin-right: 19px;
+}
+
+.song_btn_prev
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 20px;
+    margin-left: 0px;
+}
+
+.song_btn_play
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.song_btn_next
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+/* workspaces */
+
+.active
+{
+    color: #F5C2E7;
+}
+
+.workspaces
+{
+    padding-top: 14px;
+    font-size: 18px;
+}
+
+/* power */
+
+.power-icon
+{
+    color: #F28FAD;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.lock-btn
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+}
+
+.lock-btn:hover
+{
+    color: #F28FAD;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+}
+
+.power-btn
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+}
+
+.power-btn:hover
+{
+    color: #F28FAD;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+}
+
+.restart-btn
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+}
+
+.restart-btn:hover
+{
+    color: #F28FAD;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+}
+
+.powermenu
+{
+    background-color: #161320;
+    border-radius: 15px;
+    border: 5px solid #302D41;
+}
+
+/* menu */
+
+.menu-box
+{
+    margin-right: 65px;
+    font-size: 20px;
+}
+
+/* launcher */
+
+.launchermenu
+{
+    background-color: #161320;
+    border-radius: 15px;
+    border: 5px solid #302D41;
+}
+
+.launcher-icon
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.launcher-pfp-label
+{
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+.launcher-pfp-label2
+{
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.launcher-btn
+{
+    color: #D9E0EE;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+    margin-top: 80px;
+}
+
+.launcher-btn:hover
+{
+    color: #F28FAD;
+    font-family: VictorMono Nerd Font Mono;
+    font-size: 50px;
+    margin-top: 80px;
+}

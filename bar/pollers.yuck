@@ -1,0 +1,12 @@
+; polls
+(defpoll time0 :interval "10s"  "date '+%H':%M")
+(defpoll date :interval "10s"  "date '+%b %d'")
+(defpoll memory :interval "15s" "scripts/memory")
+(defpoll cpu :interval "15s" "scripts/cpu")
+(defpoll volume_percent :interval "3s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defpoll mic_percent :interval "3s" "amixer -D pulse sget Capture | grep 'Mono:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+
+(defpoll song_artist :interval "100ms"  "scripts/music_info --song")
+(defpoll song_status :interval "100ms"  "scripts/music_info --status")
+
+(defpoll ws :interval "1ms" "scripts/update-workspaces-1")
