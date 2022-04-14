@@ -1,0 +1,40 @@
+; includes:
+
+;pollers
+(include "pollers.yuck")
+
+;vars
+(include "vars.yuck")
+
+;widgets
+(include "widgets.yuck")
+
+;windows
+(defwindow bar
+    :monitor 0
+    :windowtype "dock"
+    :geometry (geometry :x "0%"
+                        :y "-15px"
+                        :width "90%"
+                        :height "40px"
+                        :anchor "bottom center")
+    :reserve (struts :side "bottom" :distance "6%")
+    (bar))
+
+(defwindow powermenu
+    :monitor 0
+    :geometry (geometry :x "-100px"
+                        :y "-80px"
+                        :width "5%"
+                        :height "40%"
+                        :anchor "bottom right")
+    (powermenu))
+
+(defwindow launchermenu
+    :monitor 0
+    :geometry (geometry :x "150px"
+                        :y "-80px"
+                        :width "20%"
+                        :height "50%"
+                        :anchor "bottom left")
+    (launchermenu))

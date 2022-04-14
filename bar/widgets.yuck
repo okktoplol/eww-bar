@@ -1,0 +1,222 @@
+; widgets
+(defwidget bar []
+    (box :class "bar"
+         :orientation "h"
+         (vol)
+         (workspaces)
+         (power-time-cpu-mem-music)))
+
+(defwidget powermenu []
+     (box :class "powermenu"
+          :orientation "v"
+          (lock-power-restart)))
+
+
+(defwidget launchermenu []
+     (box :class "launchermenu"
+          :orientation "v"
+          (pfp)))
+
+(defwidget sep []
+  (box :orientation "h"
+       :valign "center"
+       (label :class "sepbar" :text "|")))
+
+(defwidget workspaces []
+     (literal :content ws))
+
+(defwidget music []
+    (box :class "music"
+         :orientation "h"
+         :space-evenly true
+         :halign "center"
+         :valign "center"
+         :tooltip "music"
+         (eventbox :onhover "${eww} update hover_mus=true"
+                   :onhoverlost "${eww} update hover_mus=false"
+                   (box :orientation "h"
+                        :space-evenly "false"
+                        :halign "start"
+                        :valign "center"
+                        (label :class "music-label"
+                               :text song_artist
+                               :wrap "true")
+                        (revealer :reveal hover_mus
+                                  :transition "slideright"
+                                  :duration "0.5"
+                                  (box :orientation "h"
+                                       :space-evenly "false"
+                                       :halign "start"
+                                       :valign "center"
+                                       (button :class "song_btn_prev" :onclick "/home/okk/Documents/eww/bar/scripts/music_info --prev" "")
+                                       (button :class "song_btn_play" :onclick "/home/okk/Documents/eww/bar/scripts/music_info --toggle" song_status)
+                                       (button :class "song_btn_next" :onclick "/home/okk/Documents/eww/bar/scripts/music_info --next" "")))))))
+
+(defwidget vol []
+    (box :class "micvol"
+         :halign "start"
+         :valign "center"
+         :orientation "h"
+         (box :class "menu-box"
+              :orientation "h"
+              :halign "end"
+              :valign "center"
+              :space-evenly "false"
+              (button :onclick "/home/okk/Documents/eww/bar/scripts/pop-launcher"
+                      ""))
+         (box :class "mic"
+              (eventbox :onhover "${eww} update hover_mic=true"
+                        :onhoverlost "${eww} update hover_mic=false"
+              (box :orientation "h"
+                   :space-evenly "false"
+                   :halign "start"
+                   :valign "center"
+                   (label :text ""
+                          :wrap "true"
+                          :class "mic-icon")
+                          (revealer :reveal true
+                                    :transition "slideright"
+                                    :duration "0.5"
+                                    (scale :class "micbar"
+                                           :orientation "h"
+                                           :value mic_percent
+                                           :tooltip "mic is on ${mic_percent}%"
+                                           :min-value 0
+                                           :max-value 100
+                                           :onchange "amixer -D pulse sset Capture {}%")))))
+         (box :class "vol"
+              (eventbox :onhover "${eww} update hover_vol=true"
+                        :onhoverlost "${eww} update hover_vol=false"
+                        (box :orientation "h"
+                             :space-evenly "false"
+                             :halign "start"
+                             :valign "center"
+                             (label :text ""
+                                    :wrap "true"
+                                    :class "vol-icon")
+                                    (revealer :reveal true
+                                              :transition "slideright"
+                                              :duration "0.5"
+                                              (scale :class "volbar"
+                                                     :orientation "h"
+                                                     :value volume_percent
+                                                     :tooltip "volume is on ${volume_percent}%"
+                                                     :min-value 0
+                                                     :max-value 100
+                                                     :onchange "amixer -D pulse sset Master {}%")))))))
+
+(defwidget cpu-and-mem []
+    (box :class "cpu-and-mem"
+         :orientation "h"
+         :halign "end"
+         :valign "center"
+         :space-evenly "false"
+         (circular-progress :class "cpu"
+                            :tooltip "using ${cpu}% cpu"
+                            :value cpu
+                            :thickness 12)
+         (circular-progress :class "mem"
+                            :tooltip "using ${memory}% ram"
+                            :value memory
+                            :thickness 12)))
+
+(defwidget power-time-cpu-mem-music []
+    (box :class "time-cpu-mem"
+         :halign "end"
+         :valign "center"
+         :space-evenly "false"
+         :orientation "h"
+         (music)
+         (sep)
+         (cpu-and-mem)
+         (sep)
+         (label :text "${date}/"
+                :class "time-label"
+                :halign "end"
+                :valign "center"
+                :space-evenly "false"
+                :tooltip "time"
+                :orientation "h")
+         (label :text time0
+                :class "time-label"
+                :halign "end"
+                :valign "center"
+                :space-evenly "false"
+                :tooltip "time"
+                :orientation "h"
+                )
+          (sep)
+          (power)))
+
+(defwidget power []
+     (box :orientation "h"
+          :halign "end"
+          :valign "center"
+          :space-evenly "false"
+          (button :onclick "/home/okk/Documents/eww/bar/scripts/pop-power"
+                  :class "power-icon"
+                  :tooltip "power off"
+                  "⏻")))
+
+(defwidget lock-power-restart []
+     (box :orientation "v"
+          :halign "center"
+          :valign "center"
+          :space-evenly "false"
+          :spacing 70
+          (box :orientation "v"
+               :halign "center"
+               :valign "center"
+               :space-evenly "false"
+               (button :onclick "systemctl reboot"
+                    :class "restart-btn"
+                    :tooltip "restart"
+                    ""))
+          (box :orientation "v"
+               :halign "center"
+               :valign "center"
+               :space-evenly "false"
+               (button :onclick "/home/okk/.config/herbstluftwm/bin/herblock.sh"
+                    :class "lock-btn"
+                    :tooltip "lock"
+                    ""))
+          (box :orientation "v"
+               :halign "center"
+               :valign "center"
+               :space-evenly "false"
+               (button :onclick "systemctl poweroff"
+                       :class "power-btn"
+                       :tooltip "power off"
+                       ""))))
+
+(defwidget pfp []
+     (box :orientation "v"
+          :space-evenly "false"
+          :halign "middle"
+          :valign "start"
+          (image :path "/home/okk/Documents/eww/bar/assets/pfp.png"
+                 :class "launcher-icon"
+                 :image-width 250
+                 :image-height 250)
+          (label :text "okklol"
+                 :class "launcher-pfp-label")
+          (label :text "${time0} - ${date}"
+                 :class "launcher-pfp-label2")
+          (box :orientation "h"
+               :space-evenly true
+               (button :class "launcher-btn"
+                       :onclick "spotify & disown"
+                       :tooltip "discord"
+                       "ﭮ")
+               (button :class "launcher-btn"
+                       :onclick "spotify & disown"
+                       :tooltip "spotify"
+                       "")
+               (button :class "launcher-btn"
+                       :onclick "steam & disown"
+                       :tooltip "stean"
+                       "")
+               (button :class "launcher-btn"
+                       :onclick "firefox -P default-release & disown"
+                       :tooltip "firefox non-private"
+                       ""))))
