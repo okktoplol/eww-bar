@@ -1,5 +1,7 @@
 <img src="./bar.gif">
 
+**WARNING: archived as of 30.07.2024 (haven't updated in a very long time, may no longer work.)**
+
 # eww-bar
 a bar made with eww
 
